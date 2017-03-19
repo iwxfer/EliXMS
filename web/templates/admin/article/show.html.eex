@@ -1,0 +1,10 @@
+<div class="container">
+  <h1><%= @article.title %></h1>
+  <p>
+    <%= link "Edit", to: admin_article_path(@conn, :edit, @article) %>
+  </p>
+  <p><%= @article.body %></p>
+
+  <%= link "Back", to: admin_article_path(@conn, :index) %>
+
+</div>

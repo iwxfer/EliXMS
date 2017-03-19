@@ -1,0 +1,7 @@
+<div class="container">
+  <h1>New Product</h1>
+
+  <%= render "form.html", changeset: @changeset, action: admin_product_path(@conn, :create) %>
+
+  <%= link "Back", to: admin_product_path(@conn, :index) %>
+</div>

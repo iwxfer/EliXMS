@@ -1,0 +1,13 @@
+<div class="container">
+  <h1><%= @service.title %></h1>
+  <p>
+    <%= link "Edit", to: admin_service_path(@conn, :edit, @service) %>
+  </p>
+  <p>
+    <i class="fa fa-<%= @service.icon %>" aria-hidden="true"></i>
+  </p>
+  <p><%= @service.body %></p>
+
+  <%= link "Back", to: admin_service_path(@conn, :index) %>
+
+</div>

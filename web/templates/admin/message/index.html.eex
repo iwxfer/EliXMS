@@ -1,0 +1,29 @@
+<div class="container">
+  <h1>Messages</h1>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Phone</th>
+        <th>Body</th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <%= for message <- @messages do %>
+        <tr>
+          <td><%= message.name %></td>
+          <td><%= message.email %></td>
+          <td><%= message.phone %></td>
+          <td><%= message.body %></td>
+
+          <td> <%= link "Show", to: admin_message_path(@conn, :show, message) %> </td>
+          <td> <%= link "Delete", to: admin_message_path(@conn, :delete, message), method: :delete %> </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

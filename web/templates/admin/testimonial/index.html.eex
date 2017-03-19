@@ -1,0 +1,32 @@
+<div class="container">
+  <h1>Testimonials</h1>
+  <%= link "New Testimonial", to: admin_testimonial_path(@conn, :new) %>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Full name</th>
+        <th>Designation</th>
+        <th>Company</th>
+        <!-- <th>Body</th> -->
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <%= for testimonial <- @testimonials do %>
+        <tr>
+          <td><%= testimonial.full_name %></td>
+          <td><%= testimonial.designation %></td>
+          <td><%= testimonial.company %></td>
+          <!-- <td><%= testimonial.body %></td> -->
+
+          <td> <%= link "Show", to: admin_testimonial_path(@conn, :show, testimonial) %> </td>
+          <td> <%= link "Edit", to: admin_testimonial_path(@conn, :edit, testimonial) %> </td>
+          <td> <%= link "Delete", to: admin_testimonial_path(@conn, :delete, testimonial), method: :delete %> </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

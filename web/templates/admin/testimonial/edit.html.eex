@@ -1,0 +1,7 @@
+<div class="container">
+  <h1>Edit Testimonial</h1>
+
+  <%= render "form.html", changeset: @changeset, action: admin_testimonial_path(@conn, :update, @testimonial) %>
+
+  <%= link "Back", to: admin_testimonial_path(@conn, :index) %>
+</div>

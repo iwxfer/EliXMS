@@ -1,0 +1,13 @@
+<div class="container">
+  <h1><%= @testimonial.full_name %></h1>
+  <p>
+    <%= link "Edit", to: admin_testimonial_path(@conn, :edit, @testimonial) %>
+  </p>
+  <h3><%= @testimonial.designation %></h3>
+  <p><%= @testimonial.company %></p>
+  <p><%= @testimonial.body %></p>
+  
+  <p>
+    <%= link "Back", to: admin_testimonial_path(@conn, :index) %>
+  </p>
+</div>

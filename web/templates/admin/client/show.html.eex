@@ -1,0 +1,11 @@
+<div class="container">
+  <h1><%= @client.logo %></h1>
+  <p>
+    <%= link "Edit", to: admin_client_path(@conn, :edit, @client) %>
+  </p>
+  <p><%= @client.name %></p>
+  <p><%= @client.body %></p>
+
+  <%= link "Back", to: admin_client_path(@conn, :index) %>
+
+</div>

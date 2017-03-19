@@ -1,0 +1,13 @@
+<div class="container">
+  <h1><%= @product.title %></h1>
+  <p>
+    <%= link "Edit", to: admin_product_path(@conn, :edit, @product) %>
+  </p>
+  <p>
+    <i class="fa fa-<%= @product.icon %>" aria-hidden="true"></i>
+  </p>
+  <p><%= @product.body %></p>
+
+  <%= link "Back", to: admin_product_path(@conn, :index) %>
+
+</div>

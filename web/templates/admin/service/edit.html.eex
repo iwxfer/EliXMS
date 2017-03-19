@@ -1,0 +1,7 @@
+<div class="container">
+  <h1>Edit Service</h1>
+
+  <%= render "form.html", changeset: @changeset, action: admin_service_path(@conn, :update, @service) %>
+
+  <%= link "Back", to: admin_service_path(@conn, :index) %>
+</div>

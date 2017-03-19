@@ -1,0 +1,30 @@
+<div class="container">
+  <h1>Clients</h1>
+  <%= link "New Client", to: admin_client_path(@conn, :new) %>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th>logo</th>
+        <th>Name</th>
+        <th>Body</th>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <%= for client <- @clients do %>
+        <tr>
+          <td><%= client.logo %></td>
+          <td><%= client.name %></td>
+          <td><%= client.body %></td>
+
+          <td> <%= link "Show", to: admin_client_path(@conn, :show, client) %> </td>
+          <td> <%= link "Edit", to: admin_client_path(@conn, :edit, client) %> </td>
+          <td> <%= link "Delete", to: admin_client_path(@conn, :delete, client), method: :delete %> </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

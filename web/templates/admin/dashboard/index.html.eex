@@ -1,0 +1,25 @@
+<div class="container">
+  <h1>Dashboard</h1>
+
+  <ul class="nav nav-pills">
+    <li class="nav-item">
+      <%= link "Slides", to: admin_slide_path(@conn, :index), class: "nav-link" %>
+    </li>
+    <li class="nav-item">
+      <%= link "Services", to: admin_service_path(@conn, :index), class: "nav-link" %>
+    </li>
+    <li class="nav-item">
+      <%= link "Testimonials", to: admin_testimonial_path(@conn, :index), class: "nav-link" %>
+    </li>
+    <li class="nav-item">
+      <%= link "Products", to: admin_product_path(@conn, :index), class: "nav-link" %>
+    </li>
+    <li class="nav-item">
+      <%= link "Clients", to: admin_client_path(@conn, :index), class: "nav-link" %>
+    </li>
+    <li class="nav-item">
+      <%= link "Articles", to: admin_article_path(@conn, :index), class: "nav-link" %>
+    </li>
+  </ul>
+
+</div>

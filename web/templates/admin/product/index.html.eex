@@ -1,0 +1,30 @@
+<div class="container">
+  <h1>Products</h1>
+  <%= link "New Product", to: admin_product_path(@conn, :new) %>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Icon</th>
+        <th>Title</th>
+        <th>Body</th>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <%= for product <- @products do %>
+        <tr>
+          <td><i class="fa fa-<%= product.icon %>" aria-hidden="true"></i></td>
+          <td><%= product.title %></td>
+          <td><%= product.body %></td>
+
+          <td> <%= link "Show", to: admin_product_path(@conn, :show, product) %> </td>
+          <td> <%= link "Edit", to: admin_product_path(@conn, :edit, product) %> </td>
+          <td> <%= link "Delete", to: admin_product_path(@conn, :delete, product), method: :delete %> </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

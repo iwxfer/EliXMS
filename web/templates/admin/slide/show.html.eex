@@ -1,0 +1,16 @@
+<div class="container">
+  <h1><%= @slide.title %></h1>
+  <p>
+    <%= link "Edit", to: admin_slide_path(@conn, :edit, @slide) %>
+  </p>
+  <h3><%= @slide.sub_title %></h3>
+  <p><%= @slide.body %></p>
+  <p><%= inspect @slide.style.background_color %></p>
+  <p>
+    <%= link @slide.link_text, to: @slide.link_url %>
+  </p>
+
+  <p>
+    <%= link "Back", to: admin_slide_path(@conn, :index) %>
+  </p>
+</div>

@@ -1,0 +1,30 @@
+<div class="container">
+  <h1>Services</h1>
+  <%= link "New Service", to: admin_service_path(@conn, :new) %>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Icon</th>
+        <th>Title</th>
+        <th>Body</th>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <%= for service <- @services do %>
+        <tr>
+          <td><i class="fa fa-<%= service.icon %>" aria-hidden="true"></i></td>
+          <td><%= service.title %></td>
+          <td><%= service.body %></td>
+
+          <td> <%= link "Show", to: admin_service_path(@conn, :show, service) %> </td>
+          <td> <%= link "Edit", to: admin_service_path(@conn, :edit, service) %> </td>
+          <td> <%= link "Delete", to: admin_service_path(@conn, :delete, service), method: :delete %> </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

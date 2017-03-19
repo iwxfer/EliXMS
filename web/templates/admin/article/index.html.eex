@@ -1,0 +1,28 @@
+<div class="container">
+  <h1>Articles</h1>
+  <%= link "New Article", to: admin_article_path(@conn, :new) %>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Body</th>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <%= for article <- @articles do %>
+        <tr>
+          <td><%= article.title %></td>
+          <td><%= article.body %></td>
+
+          <td> <%= link "Show", to: admin_article_path(@conn, :show, article) %> </td>
+          <td> <%= link "Edit", to: admin_article_path(@conn, :edit, article) %> </td>
+          <td> <%= link "Delete", to: admin_article_path(@conn, :delete, article), method: :delete %> </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

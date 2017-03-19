@@ -1,0 +1,56 @@
+<div class="slides">
+  <%= for slide <- @slides do %>
+    <div class="slide slide-<%= slide.id %>" style="color: #fff; background-color: <%= slide.style.background_color %>">
+      <div class="container">
+        <h1><%= slide.title %></h1>
+        <h3><%= slide.sub_title %></h3>
+        <p><%= slide.body %></p>
+        <p> <%= link slide.link_text, to: slide.link_url, class: "btn btn-secondary-outline" %> </p>
+      </div>
+    </div>
+  <% end %>
+</div>
+<!-- Slides End -->
+<div class="services">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 text-xs-center">
+        <h1>Our Services</h1>
+        <p style="color:#9e9e9e; ">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis autem laborum totam maiores sunt quas velit esse sed officia nesciunt odit cumque aperiam, at! Perspiciatis, ratione placeat rem quaerat aspernatur!
+        </p>
+        <br> <br>
+      </div>
+    </div>
+    <div class="row">
+      <%= for service <- @services do %>
+
+        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+          <div class="service text-xs-center" style="border-top: 3px solid <%= service.style.color %>;">
+            <p><i class="fa fa-<%= service.icon %>" aria-hidden="true" style="margin:20px 0;font-size:40px; color:<%= service.style.color %>"></i></p>
+            <h3><%= service.title %></h3>
+            <p class="" style="color:#9e9e9e; font-size:13px;"><%= service.body %></p>
+            <p><%= link "View More", to: service_path(@conn, :show, service ), class: "btn btn-secondary-outline" %></p>
+          </div>
+        </div>
+
+        <% end %>
+    </div>
+  </div>
+</div>
+<!-- Services End -->
+<div class="testimonials_warapper">
+  <div class="container">
+    <div class="testimonials">
+      <%= for testimonial <- @testimonials do %>
+        <div class="testimonial testimonial-<%= testimonial.id %>">
+          <div class="col-xs-12">
+            <p style="background-color: rgba(0,0,0, 0.4); color: rgba(255,255,255,0.6); padding: 30px; border-radius: 5px"><%= testimonial.body %></p>
+            <h4><%= testimonial.full_name %></h4>
+            <p><%= testimonial.designation %>, <%= testimonial.company %></p>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

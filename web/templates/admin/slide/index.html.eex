@@ -1,0 +1,33 @@
+<div class="container">
+  <h1>Slides</h1>
+  <%= link "New Slide", to: admin_slide_path(@conn, :new) %>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Sub Title</th>
+        <th>Body</th>
+        <th>Link Text</th>
+        <th>Link URL</th>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <%= for slide <- @slides do %>
+        <tr>
+          <td><%= slide.title %></td>
+          <td><%= slide.sub_title %></td>
+          <td><%= slide.body %></td>
+          <td><%= slide.link_text %></td>
+          <td><%= slide.link_url %></td>
+          <td> <%= link "Show", to: admin_slide_path(@conn, :show, slide) %> </td>
+          <td> <%= link "Edit", to: admin_slide_path(@conn, :edit, slide) %> </td>
+          <td> <%= link "Delete", to: admin_slide_path(@conn, :delete, slide), method: :delete %> </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
